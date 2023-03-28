@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "js-utilities"
+version = "v0.1.0-alpha"
+authors = [
+    { name = "Greyson R. LaLonde", email = "greyson.r.lalonde@gmail.com" },
+]
+description = "Provides utilities for creating and manipulating Javascript objects via Python."
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+
+dev = [
+    "mypy>=1.1.1",
+    "blue>=0.9.1",
+    "pylint>=2.17.1",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "autoflake>=2.0.2",
+]
+doc = [
+    "Sphinx==4.5.0",
+    "furo==2022.6.21",
+    "sphinx-copybutton==0.5.0",
+    "sphinxext-opengraph==0.6.3",
+    "sphinx_design==0.2.0",
+]
+
+[project.urls]
+homepage = "https://github.com/greysonlalonde/js-utilities"
+documentation = "https://js-utilities.readthedocs.io"
+tracker = "https://github.com/greysonlalonde/js-utilities/issues"
+
+[tool.blue]
+color = true
+target-version = ['py310']
+
+
+[tool.mypy]
+python_version = '3.11'
+warn_return_any = true
+warn_unused_configs = true
+follow_imports = "silent"
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_reexport = true
+ignore_missing_imports = true
+disallow_untyped_defs = true
+
+[tool.flake8]
+max_line_length = 79
+
+[tool.isort]
+profile = "black"
+known_first_party = 'js_utilities'
+force_to_top = ["annotations"]
+include_trailing_comma = true
+multi_line_output = 3
+combine_as_imports = true

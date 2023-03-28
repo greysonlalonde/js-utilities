@@ -1,0 +1,7 @@
+-r requirements.txt
+mypy>=1.1.1
+blue>=0.9.1
+pylint>=2.17.1
+isort>=5.12.0
+flake8>=6.0.0
+autoflake>=2.0.2
